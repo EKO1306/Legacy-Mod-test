@@ -12,12 +12,6 @@ func:function()
 	
 	//First we create a couple new resources :
 	new G.Res({
-		name:'power',
-		desc:'[power] comes in many different forms, such as steam turbines or voltage. Either way, they are all used by many machines.' +numbersInfo,
-		limit:'power storage',
-		icon:[6,1],
-	});
-	new G.Res({
 		name:'torch',
 		desc:'A simple portable light source made by lighting the end of a [stick] on fire. Helpful for [wanderer]s and [scout]s.' +numbersInfo,
 		displayUsed:true,
