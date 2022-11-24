@@ -3,7 +3,7 @@ name:'Mod Test',
 author:'Orteil',
 desc:'A simple example mod that adds hot peppers and hot sauce.',
 engineVersion:1,
-manifest:'myModManifest.js',
+manifest:0,
 requires:['Default dataset*'],
 sheets:{'icon':'img/iconSheet.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
 func:function()
