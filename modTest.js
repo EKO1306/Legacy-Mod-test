@@ -12,12 +12,10 @@ func:function()
 	
 	//First we create a couple new resources :
 	new G.Res({
-		name:'hot pepper',
-		desc:'I hate my life.',
-		icon:[0,0],
-		turnToByContext:{'eat':{'health':0.01,'happiness':0.03},'decay':{'spoiled food':0.5}},//this basically translates to : "when eaten, generate some health and happiness; when rotting, turn into either nothing or some spoiled food"
-		partOf:'food',
-		category:'food',
+		name:'torch',
+		desc:'A simple portable light source made by lighting the end of a [stick] on fire. Helpful for [wanderer,wanderers] and [scout,scouts]',
+		icon:[6,1],
+		category:'gear',
 	});
 	new G.Res({
 		name:'hot sauce',
@@ -30,7 +28,7 @@ func:function()
 	
 	//Then we augment the base data to incorporate our new resources :
 		//adding hot pepper as something that can be gathered from grass
-	G.getDict('grass').res['gather']['hot pepper']=3;
+	G.getDict('grass').res['gather']['torch']=3;
 		//adding a new mode to artisans so they can make hot sauce from hot peppers
 	G.getDict('artisan').modes['hot sauce']={name:'Make hot sauce',desc:'Turn 3 [hot pepper]s and 3 [herb]s into 1 [hot sauce].',req:{'hot sauce preparing':true},use:{'knapped tools':1}};
 		//adding a new effect to artisans that handles the actual hot sauce preparing and is only active when the unit has the mode "hot sauce"
