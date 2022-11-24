@@ -12,6 +12,14 @@ func:function()
 	
 	//First we create a couple new resources :
 	new G.Res({
+		name:'power',
+		desc:'[power] comes in many different forms, such as steam turbines or voltage. Either way, they are all used by many machines.' +numbersInfo,
+		limit:'power storage',
+		icon:[6,1],
+		category:'essentials',
+		getDisplayAmount:researchGetDisplayAmount,
+	});
+	new G.Res({
 		name:'torch',
 		desc:'A simple portable light source made by lighting the end of a [stick] on fire. Helpful for [wanderer]s and [scout]s.' +numbersInfo,
 		displayUsed:true,
@@ -31,7 +39,14 @@ func:function()
 	new G.Tech({
 		name:'torch-making',
 		desc:'@[artisan]s can now produce [torch]es@Unlocks a new modes for [wanderer]s and [scout]s which increase searching speed using torches// by wrapping flammable [herb]s around a [stick] and setting fire to it, we create a portable light.',
-		icon:[0,1,'spicySheet'],
+		icon:[0,1],
+		cost:{'insight':10},
+		req:{'speech':true},
+	});
+	new G.Tech({
+		name:'steam-power',
+		desc:'@unlocks the [power plant] and the [battery]// by heating [water] with [coal], we can create steam to power various devices.',
+		icon:[3,2]],
 		cost:{'insight':10},
 		req:{'speech':true},
 	});
@@ -40,7 +55,7 @@ func:function()
 	new G.Trait({
 		name:'hot sauce madness',
 		desc:'@your people appreciate [hot sauce] twice as much and will be twice as happy from consuming it.',
-		icon:[1,1,'spicySheet'],
+		icon:[1,1],
 		chance:0.1,
 		req:{'torch-making':true},
 		effects:[
