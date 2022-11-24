@@ -8,11 +8,12 @@ requires:['Default dataset*'],
 sheets:{'icon':'img/iconSheet.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
 func:function()
 {
+	var numbersInfo='//The number on the left is how many are in use, while the number on the right is how many you have in total.';
 	
 	//First we create a couple new resources :
 	new G.Res({
 		name:'torch',
-		desc:'A simple portable light source made by lighting the end of a [stick] on fire. Helpful for [wanderer]s and [scout]s.'+numbersInfo,
+		desc:'A simple portable light source made by lighting the end of a [stick] on fire. Helpful for [wanderer]s and [scout]s.' +numbersInfo,
 		displayUsed:true,
 		icon:[6,1],
 		category:'gear',
