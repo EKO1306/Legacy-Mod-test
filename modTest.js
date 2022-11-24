@@ -40,7 +40,7 @@ func:function()
 		desc:'@[artisan]s can now produce [torch]es@Unlocks a new modes for [wanderer]s and [scout]s which increase searching speed using torches// by wrapping flammable [herb]s around a [stick] and setting fire to it, we create a portable light.',
 		icon:[0,1,'spicySheet'],
 		cost:{'insight':10},
-		req:{'cooking':true},
+		req:{'speech':true},
 	});
 	
 	//Finally, we add a trait that amplifies the benefits of consuming hot sauce; it will take on average 20 years to appear once the conditions (knowing the "Hot sauce preparing" tech) is fulfilled.
