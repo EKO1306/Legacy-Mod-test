@@ -8,22 +8,14 @@ requires:['Default dataset*'],
 sheets:{'icon':'img/iconSheet.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
 func:function()
 {
-	//The idea in this simple example mod is to add a few elements focused around hot sauce, because hot sauce is great and I use that stuff everywhere.
 	
 	//First we create a couple new resources :
 	new G.Res({
 		name:'torch',
-		desc:'A simple portable light source made by lighting the end of a [stick] on fire. Helpful for [wanderer]s and [scout]s.',
+		desc:'A simple portable light source made by lighting the end of a [stick] on fire. Helpful for [wanderer]s and [scout]s.'+numbersInfo,
+		displayUsed:true,
 		icon:[6,1],
 		category:'gear',
-	});
-	new G.Res({
-		name:'hot sauce',
-		desc:'Made from [herb]s and the [hot pepper,Spiciest peppers], this [hot sauce] stays fresh for a while and will leave anyone panting and asking for more.',
-		icon:[1,0,'spicySheet'],
-		turnToByContext:{'eat':{'health':0.03,'happiness':0.1},'decay':{'hot sauce':0.95,'spoiled food':0.05}},//that last part makes hot sauce effectively have a 95% chance of simply not rotting (in effect, it decays into itself)
-		partOf:'food',
-		category:'food',
 	});
 	
 	//Then we augment the base data to incorporate our new resources :
