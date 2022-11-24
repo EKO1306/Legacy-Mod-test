@@ -1,5 +1,5 @@
 G.AddData({
-name:'My mod',
+name:'Mod Test',
 author:'Orteil',
 desc:'A simple example mod that adds hot peppers and hot sauce.',
 engineVersion:1,
@@ -13,7 +13,7 @@ func:function()
 	//First we create a couple new resources :
 	new G.Res({
 		name:'hot pepper',
-		desc:'[hot pepper]s are loaded with e and, depending on who you ask, may produce a pleasant burn when eaten.',
+		desc:'I hate my life.',
 		icon:[0,0,'spicySheet'],
 		turnToByContext:{'eat':{'health':0.01,'happiness':0.03},'decay':{'spoiled food':0.5}},//this basically translates to : "when eaten, generate some health and happiness; when rotting, turn into either nothing or some spoiled food"
 		partOf:'food',
