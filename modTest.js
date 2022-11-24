@@ -16,8 +16,6 @@ func:function()
 		desc:'[power] comes in many different forms, such as steam turbines or voltage. Either way, they are all used by many machines.' +numbersInfo,
 		limit:'power storage',
 		icon:[6,1],
-		category:'essentials',
-		getDisplayAmount:researchGetDisplayAmount,
 	});
 	new G.Res({
 		name:'torch',
