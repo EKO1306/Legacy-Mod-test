@@ -20,7 +20,7 @@ func:function()
 	
 	//Then we augment the base data to incorporate our new resources :
 		//adding hot pepper as something that can be gathered from grass
-	G.getDict('grass').res['gather']['herb']=3;
+	G.getDict('grass').res['gather']['torch']=3;
 		//adding a new mode to artisans so they can make hot sauce from hot peppers
 	G.getDict('firekeeper').modes['torch']={name:'Light torches',desc:'Wrap 3 flammable [herb]s around a [stick] to create a torch.',req:{'torch-making':true}};
 		//adding a new effect to artisans that handles the actual hot sauce preparing and is only active when the unit has the mode "hot sauce"
