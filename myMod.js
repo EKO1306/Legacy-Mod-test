@@ -1,4 +1,4 @@
-G.AddData({
+G.AddDaa({
 name:'My mod',
 author:'Orteil',
 desc:'A simple example mod that adds hot peppers and hot sauce.',
