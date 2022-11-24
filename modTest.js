@@ -13,7 +13,7 @@ func:function()
 	//First we create a couple new resources :
 	new G.Res({
 		name:'torch',
-		desc:'A simple portable light source made by lighting the end of a [stick] on fire. Helpful for [wanderer,wanderers] and [scout,scouts]',
+		desc:'A simple portable light source made by lighting the end of a [stick] on fire. Helpful for [wanderer]s and [scout]s.',
 		icon:[6,1],
 		category:'gear',
 	});
@@ -30,14 +30,14 @@ func:function()
 		//adding hot pepper as something that can be gathered from grass
 	G.getDict('grass').res['gather']['torch']=3;
 		//adding a new mode to artisans so they can make hot sauce from hot peppers
-	G.getDict('artisan').modes['hot sauce']={name:'Make hot sauce',desc:'Turn 3 [hot pepper]s and 3 [herb]s into 1 [hot sauce].',req:{'hot sauce preparing':true},use:{'knapped tools':1}};
+	G.getDict('firekeeper').modes['torch']={name:'Light torches',desc:'Wrap 3 flammable [herb]s around a [stick] to create a torch.',req:{'torch-making':true}};
 		//adding a new effect to artisans that handles the actual hot sauce preparing and is only active when the unit has the mode "hot sauce"
-	G.getDict('artisan').effects.push({type:'convert',from:{'hot pepper':3,'herb':3},into:{'hot sauce':1},every:3,mode:'hot sauce'});
+	G.getDict('firekeeper').effects.push({type:'convert',from:{'stick':1,'herb':3},into:{'torch':1},every:3,mode:'torch'});
 	
 	//Then we add a new technology which is required by the artisans to gain access to the "hot sauce" mode :
 	new G.Tech({
-		name:'hot sauce preparing',
-		desc:'@[artisan]s can now produce [hot sauce] from [hot pepper]s and [herb]s//This special recipe allows a skilled craftsman to fully express the complex aromas present in hot peppers.',
+		name:'torch-making',
+		desc:'@[artisan]s can now produce [torch]es@Unlocks a new modes for [wanderer]s and [scout]s which increase searching speed using torches// by wrapping flammable [herb]s around a [stick] and setting fire to it, we create a portable light.',
 		icon:[0,1,'spicySheet'],
 		cost:{'insight':10},
 		req:{'cooking':true},
@@ -48,8 +48,8 @@ func:function()
 		name:'hot sauce madness',
 		desc:'@your people appreciate [hot sauce] twice as much and will be twice as happy from consuming it.',
 		icon:[1,1,'spicySheet'],
-		chance:20,
-		req:{'hot sauce preparing':true},
+		chance:0.1,
+		req:{'torch-making':true},
 		effects:[
 			{type:'function',func:function(){G.getDict('hot sauce').turnToByContext['eat']['happiness']=0.2;}},//this is a custom function executed when we gain the trait
 		],
