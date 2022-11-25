@@ -11,18 +11,6 @@ func:function()
 	var numbersInfo='//The number on the left is how many are in use, while the number on the right is how many you have in total.';
 	
 	//First we create a couple new resources :
-	new G.Res({ 
-		name:'power', 
-		desc:'[power] comes in many different forms, such as steam turbines or voltage. Either way, they are all used by many machines.' +numbersInfo, 
-		limit:'power-storage', 
-		icon:[6,1], 
-		category:'essentials'
-	});
-	new G.Res({ 
-		name:'power-torage', 
-		hidden = true,
-		icon:[6,1], 
-	});
 	new G.Res({
 		name:'torch',
 		desc:'A simple portable light source made by lighting the end of a [stick] on fire. Helpful for [wanderer]s and [scout]s.' +numbersInfo,
@@ -32,7 +20,7 @@ func:function()
 	});
 	
 	//Then we augment the base data to incorporate our new resources :
-	G.getDict('grass').res['gather']['power']=3;
+	G.getDict('grass').res['gather']['torch']=3;
 	G.getDict('firekeeper').modes['torch']={name:'Light torches',desc:'Wrap 3 flammable [herb]s around a [stick] to create a torch.',req:{'torch-making':true}};
 	G.getDict('firekeeper').effects.push({type:'convert',from:{'stick':1,'herb':3},into:{'torch':1},every:3,mode:'torch'});
 	
