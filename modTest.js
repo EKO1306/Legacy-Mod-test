@@ -28,7 +28,7 @@ func:function()
 		desc:'A simple portable light source made by lighting the end of a [stick] on fire. Helpful for [wanderer]s and [scout]s.' +numbersInfo,
 		displayUsed:true,
 		icon:[6,1],
-		category:'gear',
+		category:'gear'
 	});
 	
 	//Then we augment the base data to incorporate our new resources :
