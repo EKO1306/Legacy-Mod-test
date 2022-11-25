@@ -8,6 +8,10 @@ requires:['Default dataset*'],
 sheets:{'icon':'img/iconSheet.png'},//custom stylesheet (note : broken in IE and Edge for the time being)
 func:function()
 {
-	
+	new G.Res({ 
+		name:'power-torage', 
+		hidden = true, 
+		icon:[6,1], 
+});
 }
 });
